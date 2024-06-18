@@ -2,7 +2,7 @@ import { getPosts } from "@/services/postApi";
 import Link from "next/link";
 import React from "react";
 export const metadata = {
-  title: "Post | Hero Next JS ",
+  title: "Post",
   description: "Post Page",
 };
 const PostPage = async () => {
