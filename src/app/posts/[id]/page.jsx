@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import React from "react";
 const getDetailsPost = async (id) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/${id}`);
   const data = await res.json();
   if (data) {
     redirect(`/posts/${data[0].id}`)
@@ -10,7 +10,7 @@ const getDetailsPost = async (id) => {
 };
 
 export const generateMetadata = async ({ params }) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/${params.id}`)
   const postData = await res.json();
   return {
     title: {
